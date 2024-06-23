@@ -3,16 +3,16 @@ name: my-workflow
 on: push
 
 jobs:
-  job1:
+  first-job:
     runs-on: ubuntu-latest
     steps:
      - name: checkout
        uses: actions/checkout@v4
-     - name: step1
-       run: date
-    
-     - name: step2
-       run: ls
 
-     - name: step3
-       run: cat README
+     - name: run-script
+       run: ./install.sh
+    
+     - name: run-commands
+       run: |
+         ls -ltra
+         cat README
